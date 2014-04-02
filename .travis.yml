@@ -13,11 +13,9 @@ env:
   - TOXENV=docs
   - TOXENV=packaging
 
-install:
-  - pip install tox
+install: pip install tox
 
-script:
-  - tox
+script: tox
 
 notifications:
   irc:
