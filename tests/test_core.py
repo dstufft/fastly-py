@@ -13,15 +13,21 @@
 # limitations under the License.
 from __future__ import absolute_import, division, print_function
 
-from fastly.__about__ import (
-    __author__, __copyright__, __email__, __license__, __summary__, __title__,
-    __uri__, __version__
-)
+from fastly.auth import KeyAuth, SessionAuth
 from fastly.core import Fastly
 
-__all__ = [
-    "__title__", "__summary__", "__uri__", "__version__", "__author__",
-    "__email__", "__license__", "__copyright__",
 
-    "Fastly",
-]
+def test_fastly_key():
+    api = Fastly("1234")
+
+    assert isinstance(api._session.auth, KeyAuth)
+    assert api._session.auth.key == "1234"
+
+
+def test_fastly_session():
+    api = Fastly("test@example.com", "password")
+
+    assert isinstance(api._session.auth, SessionAuth)
+    assert api._session.auth.user == "test@example.com"
+    assert api._session.auth.password == "password"
+    assert api._session.auth.session is api._session

@@ -62,4 +62,9 @@ setuptools.setup(
     ],
 
     packages=setuptools.find_packages(exclude=["tests", "tests.*"]),
+
+    install_requires=[
+        "requests",
+        "six",
+    ]
 )
