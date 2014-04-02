@@ -13,6 +13,10 @@ env:
   - TOXENV=docs
   - TOXENV=packaging
 
+before_install:
+  - "if [[ $TOXENV == 'py34' ]]; then sudo apt-get update; fi"
+  - "if [[ $TOXENV == 'py34' ]]; then sudo apt-get install python3.4 python3.4-dev; fi"
+
 install: pip install tox
 
 script: tox
