@@ -16,3 +16,4 @@ You can install fastly-py`` with ``pip``:
 
     development/index
     security
+    changelog
