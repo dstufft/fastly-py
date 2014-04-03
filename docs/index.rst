@@ -5,7 +5,7 @@ An API client for Fastly
 
 Installation
 ------------
-You can install fastly-py`` with ``pip``:
+You can install fastly-py with ``pip``:
 
 .. code-block:: console
 
