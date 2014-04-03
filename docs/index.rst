@@ -14,6 +14,7 @@ You can install fastly-py`` with ``pip``:
 .. toctree::
     :maxdepth: 2
 
+    usage
     development/index
     security
     changelog
